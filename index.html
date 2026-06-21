@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Father's Day, Papa</title>
+<meta name="description" content="A tribute to the man who never stopped believing." />
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ============ FILM GRAIN OVERLAY ============ -->
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<!-- ============ SCROLL PROGRESS BAR ============ -->
+<div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar" id="scrollBar"></div></div>
+
+<!-- ============ BACKGROUND MUSIC (optional) ============ -->
+<!-- Add an mp3 to assets/ (e.g. assets/instrumental.mp3) and it will play here. -->
+<audio id="bgMusic" loop preload="none">
+  <source src="assets/instrumental.mp3" type="audio/mpeg" />
+  <source src="assets/piano.mp3" type="audio/mpeg" />
+  <source src="assets/violin.mp3" type="audio/mpeg" />
+</audio>
+<button class="music-toggle" id="musicToggle" aria-label="Play background music" aria-pressed="false">
+  <span class="music-toggle__icon" aria-hidden="true">&#9834;</span>
+</button>
+
+<!-- ============ LOADING SCREEN ============ -->
+<div class="loader" id="loader">
+  <div class="loader__particles" id="loaderParticles" aria-hidden="true"></div>
+  <p class="loader__text">For the man who never stopped believing<span class="loader__dots">...</span></p>
+  <div class="loader__line" aria-hidden="true"></div>
+</div>
+
+<!-- ============ SECTION 1 — HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero__bg">
+    <img src="assets/hero.jpg" alt="" class="hero__img" id="heroImg" />
+    <div class="hero__overlay"></div>
+    <div class="hero__vignette"></div>
+  </div>
+
+  <div class="glow glow--gold hero__glow-gold" aria-hidden="true"></div>
+  <div class="glow glow--blue hero__glow-blue" aria-hidden="true"></div>
+  <div class="particles" id="heroParticles" aria-hidden="true"></div>
+
+  <div class="hero__content reveal" data-reveal>
+    <div class="glass-card hero__card">
+      <p class="eyebrow">Father's Day</p>
+      <h1 class="hero__title">Happy Father's Day, Papa</h1>
+      <p class="hero__subtitle">To the man who believed in me when I couldn't believe in myself.</p>
+      <button class="btn-elegant" id="beginBtn" aria-label="Begin the story">
+        <span>Begin</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true">
+    <span class="scroll-cue__line"></span>
+  </div>
+</section>
+
+<!-- ============ SECTION 2 — OUR MEMORIES ============ -->
+<section class="memories" id="memories">
+  <div class="section-divider" aria-hidden="true"><span></span></div>
+
+  <div class="memories__head reveal" data-reveal>
+    <p class="eyebrow eyebrow--center">A Living Album</p>
+    <h2 class="section-title">Our Memories</h2>
+    <p class="section-subtitle">A few moments that mean the world to me.</p>
+  </div>
+
+  <div class="gallery">
+    <figure class="gallery__item gallery__item--gold gallery__item--large reveal" data-reveal
+            data-lightbox-src="assets/memory1.jpg"
+            data-message="My papa is always helpful, never cold. You teach me and believe in me.">
+      <img src="assets/memory1.jpg" alt="A cherished memory" loading="lazy" />
+      <figcaption class="gallery__caption">The one that started it all.</figcaption>
+    </figure>
+
+    <figure class="gallery__item gallery__item--ice gallery__item--small reveal" data-reveal
+            data-lightbox-src="assets/memory2.jpg"
+            data-message="Even on the coldest days, your warmth never changed.">
+      <img src="assets/memory2.jpg" alt="A cherished memory" loading="lazy" />
+      <figcaption class="gallery__caption">Forever Greatful.</figcaption>
+    </figure>
+
+    <figure class="gallery__item gallery__item--silver gallery__item--large reveal" data-reveal
+            data-lightbox-src="assets/memory3.jpg"
+            data-message="A quiet moment, but one I'll never forget.">
+      <img src="assets/memory3.jpg" alt="A cherished memory" loading="lazy" />
+      <figcaption class="gallery__caption">A quiet, happy moment.</figcaption>
+    </figure>
+
+    <figure class="gallery__item gallery__item--gold gallery__item--wide reveal" data-reveal
+            data-lightbox-src="assets/memory4.jpg"
+            data-message="You taught me more in this moment than words ever could.">
+      <img src="assets/memory4.jpg" alt="A cherished memory" loading="lazy" />
+      <figcaption class="gallery__caption">I still smile at this one.</figcaption>
+    </figure>
+
+    <figure class="gallery__item gallery__item--ice gallery__item--small reveal" data-reveal
+            data-lightbox-src="assets/memory5.jpg"
+            data-message="Side by side then, side by side always.">
+      <img src="assets/memory5.jpg" alt="A cherished memory" loading="lazy" />
+      <figcaption class="gallery__caption">Side by side, always.</figcaption>
+    </figure>
+
+    <figure class="gallery__item gallery__item--silver gallery__item--small reveal" data-reveal
+            data-lightbox-src="assets/memory6.jpg"
+            data-message="Thank you for believing in me, even when I didn't.">
+      <img src="assets/memory6.jpg" alt="A cherished memory" loading="lazy" />
+      <figcaption class="gallery__caption">A promise, kept every day.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox__close" id="lightboxClose" aria-label="Close image">&times;</button>
+  <div class="lightbox__inner">
+    <img src="" alt="" class="lightbox__img" id="lightboxImg" />
+    <p class="lightbox__message" id="lightboxMessage"></p>
+  </div>
+</div>
+
+<!-- ============ SECTION 3 — STORY INTRO ============ -->
+<section class="story-intro paper-section" id="storyIntro">
+  <p class="story-intro__line story-intro__line--1 reveal" data-reveal>When I was lost.</p>
+  <div class="paper-divider" aria-hidden="true"><span class="paper-divider__diamond"></span></div>
+  <p class="story-intro__line story-intro__line--2 reveal" data-reveal>You became my direction.</p>
+</section>
+
+<!-- ============ SECTION 4 — LAST JUNE LETTER ============ -->
+<section class="letter-section" id="letter">
+  <div class="section-divider" aria-hidden="true"><span></span></div>
+
+  <div class="letter-wrap reveal" data-reveal>
+
+    <!-- Envelope (click to open) -->
+    <button class="envelope" id="letterEnvelope" type="button" aria-expanded="false" aria-controls="letterPaper" aria-label="Open the letter from Last June">
+      <span class="envelope__shadow" aria-hidden="true"></span>
+      <span class="envelope__body" aria-hidden="true">
+        <span class="envelope__back"></span>
+        <span class="envelope__flap"></span>
+        <span class="envelope__seal">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 6 L24 16 L34 16 L26 22 L29 32 L20 26 L11 32 L14 22 L6 16 L16 16 Z" fill="currentColor"/></svg>
+        </span>
+        <span class="envelope__pocket"></span>
+      </span>
+      <span class="envelope__hint">Tap to open</span>
+    </button>
+
+    <!-- Letter paper (revealed on open) -->
+    <div class="letter" id="letterPaper" aria-hidden="true">
+      <button class="letter__close" id="letterClose" type="button" aria-label="Close the letter">&times;</button>
+      <p class="letter__label">Last June</p>
+      <h2 class="letter__heading">Last June.</h2>
+
+      <div class="letter__body">
+       
+      <p class="letter-para" data-p="0">Last June, I failed, and for a while, I lost my way. I questioned myself, my dreams, and everything I thought I was capable of.</p>
+      <p class="letter-para" data-p="1">There were voices that filled me with doubt and tried to convince me that I was not enough.</p>
+      <p class="letter-para letter-emphasis" data-p="2">But you never listened to those voices.</p>
+      <p class="letter-para" data-p="3">You trusted me when I couldn&rsquo;t trust myself. You saw potential in me that I could no longer see, and when I was standing at a crossroads, you gently showed me the right path.</p>
+      <p class="letter-para" data-p="4">You never saw me as my failure. You saw me as the person I could still become.</p>
+      <p class="letter-para" data-p="5">Even today, I don&rsquo;t think I believe in myself as much as you believe in me.</p>
+      <p class="letter-para" data-p="6">And that has been one of the greatest gifts of my life.</p>
+      <p class="letter-para" data-p="7">Thank you for standing beside me, for never doubting me, and for holding on to my dreams when I was ready to let go of them.</p>
+      <p class="letter-para" data-p="8">I hope one day I become everything you already believe I can be.</p>
+      <p class="letter-para letter-signoff" data-p="9">Happy Father&rsquo;s Day, Papa.</p>
+      <p class="letter-para letter-signature" data-p="10">With all my love,<br>Lucky <span class="heart">&#10084;</span></p>
+    </div>
+      </div>
+
+      <p class="letter__signoff">Love,</p>
+      <p class="letter__signature">Lucky &#10084;</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 5 — THINGS I NEVER SAID ============ -->
+<section class="never-said paper-section" id="neverSaid">
+  <div class="never-said__head reveal" data-reveal>
+    <p class="eyebrow eyebrow--center">In My Own Words</p>
+    <h2 class="section-title">Things I Never Said</h2>
+    <div class="paper-divider" aria-hidden="true"><span class="paper-divider__diamond"></span></div>
+    <p class="section-subtitle">Three little envelopes. Tap one to open it.</p>
+  </div>
+
+  <div class="never-said__cards">
+    <button class="say-envelope reveal" data-reveal type="button" aria-expanded="false">
+      <span class="say-envelope__face" aria-hidden="true">
+        <span class="say-envelope__flap"></span>
+        <span class="say-envelope__seal">&#10084;</span>
+      </span>
+      <span class="say-envelope__note">
+        <span class="say-envelope__mark" aria-hidden="true">&#8220;</span>
+        <span class="say-envelope__text">Thank you for believing in me when I couldn't believe in myself.</span>
+      </span>
+      <span class="say-envelope__label">Tap to open</span>
+    </button>
+
+    <button class="say-envelope reveal" data-reveal type="button" aria-expanded="false">
+      <span class="say-envelope__face" aria-hidden="true">
+        <span class="say-envelope__flap"></span>
+        <span class="say-envelope__seal">&#10084;</span>
+      </span>
+      <span class="say-envelope__note">
+        <span class="say-envelope__mark" aria-hidden="true">&#8220;</span>
+        <span class="say-envelope__text">Thank you for never letting one difficult chapter decide the rest of my story.</span>
+      </span>
+      <span class="say-envelope__label">Tap to open</span>
+    </button>
+
+    <button class="say-envelope reveal" data-reveal type="button" aria-expanded="false">
+      <span class="say-envelope__face" aria-hidden="true">
+        <span class="say-envelope__flap"></span>
+        <span class="say-envelope__seal">&#10084;</span>
+      </span>
+      <span class="say-envelope__note">
+        <span class="say-envelope__mark" aria-hidden="true">&#8220;</span>
+        <span class="say-envelope__text">Thank you for seeing possibilities in me that I could no longer see.</span>
+      </span>
+      <span class="say-envelope__label">Tap to open</span>
+    </button>
+  </div>
+</section>
+
+<!-- ============ SECTION 6 — QUOTE SCREEN ============ -->
+<section class="quote-screen" id="quoteScreen">
+  <div class="particles particles--stars" id="quoteParticles" aria-hidden="true"></div>
+  <p class="quote-screen__text reveal" data-reveal>
+    "I hope one day I become everything you already believe I can be."
+  </p>
+</section>
+
+<!-- ============ SECTION 7 — FINAL PROMISE ============ -->
+<section class="final-promise paper-section" id="finalPromise">
+  <div class="final-promise__inner reveal" data-reveal>
+    <div class="paper-divider" aria-hidden="true"><span class="paper-divider__diamond"></span></div>
+    <p class="final-promise__text">
+   No matters how far i go, I will always carry your faith with me.
+    </p>
+  </div>
+</section>
+
+<!-- ============ SECTION 8 — FINAL TRIBUTE ============ -->
+<section class="tribute" id="tribute">
+  <div class="tribute__bg">
+    <img src="assets/final.jpg" alt="" class="tribute__img" id="tributeImg" />
+    <div class="tribute__overlay"></div>
+  </div>
+
+  <div class="tribute__content reveal" data-reveal>
+    <span class="tribute__heart" aria-hidden="true">&#10084;</span>
+    <h2 class="tribute__title">Thank You, Papa.</h2>
+    <p class="tribute__sub">Happy Father's Day.</p>
+    <div class="tribute__divider" aria-hidden="true"></div>
+    <p class="tribute__love">With all my love,</p>
+    <p class="tribute__signature">Lucky &#10084;</p>
+  </div>
+
+  <p class="tribute__credit">Designed and developed with love by Lucky.</p>
+</section>
+
+<script src="js/script.js"></script>
+</body>
+</html>
