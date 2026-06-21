@@ -1100,7 +1100,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .music-toggle.is-unavailable { display: none; }
 
 @media (max-width: 480px) {
-  .music-toggle { width: 64px; height: 64px; font-size: 1.7rem;bottom:1.6em;right:1.6rem;border-width:2px;box-shadow:0 6px 20px rgba(0,0,0,0.45); }}
+  .music-toggle { width: 60px; height: 60px; font-size: 1.15rem;bottom:1.8em;right:1.8rem; }}
 1/* =========================================================
    RESPONSIVE FINE-TUNING
    ========================================================= */
